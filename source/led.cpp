@@ -27,7 +27,7 @@ typedef struct {
 static const UvisorBoxAclItem acl[] = {
 };
 
-static void my_box_main(const void *);
+static void my_box_main(void *);
 
 UVISOR_BOX_NAMESPACE(NULL);
 UVISOR_BOX_HEAPSIZE(8192);
@@ -45,7 +45,7 @@ static void my_box_switch_irq(void)
         (int)(*uvisor_ctx->led));
 }
 
-static void my_box_main(const void *)
+static void my_box_main(void *)
 {
     /* allocate serial port to ensure that code in this secure box
      * won't touch handle in the default security context when printing */
